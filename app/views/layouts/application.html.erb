@@ -10,6 +10,15 @@
   </head>
 
   <body>
+    <!-- flash area -->
+    <% flash.each do |message_type, message| %>
+      <%= message_type %> <%= message %>
+    <% end %>
     <%= yield %>
+    <!-- debug area -->
+    <p>=========================================</p>
+    <p>debug data</p>
+    <%= debug(params) if Rails.env.development? %>
+    <p>=========================================</p>
   </body>
 </html>
