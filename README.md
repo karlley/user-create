@@ -35,7 +35,7 @@ http://127.0.0.1:3000 にアクセスして表示確認
 - private メソッドはインデントを1段深くする
 
 ```
-$ rails g controller User new show create
+$ rails g controller Users new show create
 ```
 
 new, show, create アクション追加
