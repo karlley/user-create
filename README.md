@@ -116,24 +116,44 @@ create アクションはインスタンス作成 > 保存まで完結できる
 ### model の動きを理解する
 
 - 下記ファイルをrails カレントディレクトリに作成し、model の動きを理解する
-- `rails c --sandbox`  でインスタンスを作ってみて確認する
+- railstutorial 4.4.5 を参照
 
-```:/sample_user.rb
-# getter, setter をセットする
-# @name, @email を使えるようにする
+example_user.rb
+
+```
+class User
+  # インスタンス変数を定義
   attr_accessor :name, :email
 
-# 空User を作れるようにする
+  # 空ハッシュを持つユーザーの作成
   def initialize(attributes = {})
     @name  = attributes[:name]
     @email = attributes[:email]
   end
 
-# @name と@email をくっつける
+  # mail アドレスを表示するメソッドの定義
   def formatted_email
     "#{@name} <#{@email}>"
   end
 end
+```
+
+コンソールで動作させる
+
+```
+$ rails c --sandbox
+>> require './example_user'     # example_userのコードを読み込む方法
+=> true
+>> example = User.new
+=> #<User:0x224ceec @email=nil, @name=nil>
+>> example.name                 # attributes[:name]は存在しないのでnil
+=> nil
+>> example.name = "Example User"           # 名前を代入する
+=> "Example User"
+>> example.email = "user@example.com"      # メールアドレスを代入する
+=> "user@example.com"
+>> example.formatted_email
+=> "Example User <user@example.com>"
 ```
 
 ## route
