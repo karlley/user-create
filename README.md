@@ -2,17 +2,23 @@
 
 User 作成 > DB保存、単体ページで表示
 
-## purpose
+## Description
+
+- Rails
+- CRUD
+- resources
+
+## Purpose
 
 form タグからDB に保存, 表示するまでの処理の流れを理解する
 
-## environment
+## Environment
 
 - mac OS catarina 10.16.3
 - ruby 2.6.5
 - ruby on rails 6.0.2.1
 
-## setup
+## Setup
 
 git 設定, push, サーバ立ち上げ
 
